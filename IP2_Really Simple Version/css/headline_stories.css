@@ -1,0 +1,50 @@
+/* .headlineStories {
+    border-bottom: solid 2px #ffb978;
+} */
+
+.headlineStories .container {
+    padding-top: 20px;
+}
+
+.headlineStories .section01 {
+    display: flex;
+    justify-content: center;
+}
+
+.headlineStories .section01 h4 {
+    padding-right: 5px;
+}
+
+.headlineStories .section01 i {
+    color: #ff9900;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.headlineStories .section03 h4 {
+    color: #ff9900;
+    display: flex;
+    justify-content: center;
+}
+
+.headlineStories .section03 p {
+    text-align: center;
+    font-size: 19px;
+    line-height: 32px;
+}
+
+.headlineStories .text {
+    text-align: center;
+}
+
+.headlineStories .border {
+    padding-top: 12px;
+}
+
+.headlineStories .text h1 {
+    font-size: 33px;
+}
+
+.headlineStories h2 {
+    padding: 0px;
+}

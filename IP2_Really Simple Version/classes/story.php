@@ -10,6 +10,7 @@ class Story {
     public $image;
     public $pub_date;
     public $pub_time;
+    public $author;
 
     public function __construct($props = null) {
         if ($props != null) {
@@ -20,6 +21,7 @@ class Story {
             $this->image          = $props["image"];
             $this->pub_date       = $props["publish_date"];
             $this->pub_time       = $props["publish_time"];
+            $this->author       = $props["author"];
         }
     }
 

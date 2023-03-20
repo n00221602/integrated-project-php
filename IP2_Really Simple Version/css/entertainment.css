@@ -1,0 +1,54 @@
+.entertainment {
+    border-bottom: solid 3px #ffb978;
+}
+
+.entertainment .section01 {
+    display: flex;
+    border-bottom: solid 2px #d1d1d1;
+    height: 200px;
+}
+
+.entertainment .section02 {
+    border-bottom: solid 2px #d1d1d1;
+    margin-bottom: 10px;
+}
+
+.entertainment .img1 img {
+    max-width: 260px;
+}
+
+.entertainment .img2 img {
+    max-width: 145px;
+}
+
+.entertainment .section04 {
+    display: flex;
+}
+
+.entertainment .section05 {
+    display: flex;
+}
+
+.entertainment .section05 h2 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.entertainment .section06 {
+    display: flex;
+}
+
+.entertainment .section06 h2 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.entertainment .text {
+    padding-left: 10px;
+}
+
+.entertainment .textStories {
+    display: flex;
+    border-bottom: solid 2px #d1d1d1;
+    flex-wrap: wrap;
+}

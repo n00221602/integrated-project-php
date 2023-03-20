@@ -1,0 +1,46 @@
+.topStories {
+    border-bottom: solid 3px #ffb978;
+}
+
+.topStories .container{
+    padding: 0px;
+}
+
+.topStories .sections {
+    display: flex;
+    align-items: center;
+    height: 160px;
+    padding-bottom: 30px;
+    
+}
+
+.topStories h5{
+    padding-right: 24px;
+}
+
+.topStories .section01 {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+ /* .topStories .section02 {
+    display: flex;
+    align-items: center;
+}
+
+.topStories .section03 {
+    display: flex;
+    align-items: center;
+}
+
+.topStories .section04 {
+    display: flex;
+    align-items: center;
+}
+
+.topStories .section05 {
+    display: flex;
+    align-items: center;
+} */

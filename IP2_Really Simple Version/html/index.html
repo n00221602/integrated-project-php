@@ -1,8 +1,3 @@
-<?php 
-    require_once "classes/story.php";
-    $stories = Story::findAll();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,19 +145,6 @@
     </div>
 
     <!-- Category picks -->
-
-    <div class="width-12 nested">
-        <?php
-        foreach ($stories as $story) { ?>
-            <?php $category = Category::findById($story->category_id); ?>
-            <div class="width-4">
-                <h4 class="tag"><?= $category->name; ?></h4>
-                <h2><?= $story->$headline; ?></h2>
-                <p><?= substr($story->article,0,200); ?> </p>
-                <h3><?= $story->$publish_time; ?></h3>
-            </div>
-        <?php } ?>
-
 
     <div class="categoryPicks">
         <div class="container">

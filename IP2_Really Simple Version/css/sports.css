@@ -1,0 +1,55 @@
+.sports {
+    border-bottom: solid 3px #ffb978;
+}
+
+.sports .section01 {
+    display: flex;
+    border-bottom: solid 2px #d1d1d1;
+    height: 230px;
+}
+
+.sports .section02 {
+    border-bottom: solid 2px #d1d1d1;
+    margin-bottom: 10px;
+}
+
+
+.sports .img1 img {
+    max-width: 260px;
+}
+
+.sports .img2 img {
+    max-width: 145px;
+}
+
+.sports .section04 {
+    display: flex;
+}
+
+.sports .section05 {
+    display: flex;
+}
+
+.sports .section05 h2 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.sports .section06 {
+    display: flex;
+}
+
+.sports .section06 h2 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.sports .text {
+    padding-left: 10px;
+}
+
+.sports .textStories {
+    display: flex;
+    border-bottom: solid 2px #d1d1d1;
+    flex-wrap: wrap;
+}

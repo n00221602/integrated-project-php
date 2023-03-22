@@ -4,52 +4,61 @@
 
 .sports .section01 {
     display: flex;
-    border-bottom: solid 2px #d1d1d1;
-    height: 230px;
+    flex-wrap: wrap;
+}
+
+.sports .block {
+    display: flex;
+}
+
+.sports .section01 .block01 {
+    margin-bottom: 20px;
 }
 
 .sports .section02 {
-    border-bottom: solid 2px #d1d1d1;
-    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-.sports .img1 img {
-    max-width: 260px;
+.sports .section02 .block02 {
+    display: flex;
 }
 
-.sports .img2 img {
+.sports .section02 .block02 h2 {
+    font-size: 17px;
+    line-height: 20px;
+}
+
+.sports .section02 .block02 img {
     max-width: 145px;
+    max-height:90px;
 }
 
-.sports .section04 {
+.sports .section03 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sports .section03 .block02 {
     display: flex;
 }
 
-.sports .section05 {
-    display: flex;
-}
-
-.sports .section05 h2 {
+.sports .section03 .block02 h2 {
     font-size: 17px;
     line-height: 20px;
 }
 
-.sports .section06 {
-    display: flex;
+.sports .section03 .block02 img {
+    max-width: 145px;
+    max-height:90px;
 }
 
-.sports .section06 h2 {
-    font-size: 17px;
-    line-height: 20px;
+
+.sports .section01 img {
+    max-width: 260px;
+    max-height: 165px;
 }
 
 .sports .text {
-    padding-left: 10px;
-}
-
-.sports .textStories {
-    display: flex;
-    border-bottom: solid 2px #d1d1d1;
-    flex-wrap: wrap;
+    padding-left: 5px;
 }

@@ -1,6 +1,7 @@
 <?php
 
 require_once './classes/db.php';
+require_once './classes/story.php';
 class Category {
 
     public $entertainment;

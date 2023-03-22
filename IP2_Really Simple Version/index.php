@@ -1,5 +1,6 @@
 <?php 
     require_once "classes/story.php";
+    require_once "classes/category.php";
     $stories = Story::findAll();
 ?>
 
@@ -151,21 +152,26 @@
 
     <!-- Category picks -->
 
-    <div class="width-12 nested">
-        <?php
-        foreach ($stories as $story) { ?>
-            <?php $category = Category::findById($story->category_id); ?>
-            <div class="width-4">
-                <h4 class="tag"><?= $category->name; ?></h4>
-                <h2><?= $story->$headline; ?></h2>
-                <p><?= substr($story->article,0,200); ?> </p>
-                <h3><?= $story->$publish_time; ?></h3>
-            </div>
-        <?php } ?>
+    
 
 
     <div class="categoryPicks">
         <div class="container">
+
+
+        <div class="width-12 nested">
+        <?php
+        foreach ($stories as $story) { ?>
+        <?php $category = Category::findById($story->category_id); ?>
+            <div class="width-4">
+                <h4><?= $category->name; ?></h4>
+                <h2><?= $story->headline; ?></h2>
+                <p><?= $story->sub_heading; ?> </p>
+                <h3><?= $story->pub_time; ?></h3>
+            </div>
+        <?php } ?>
+
+
             <div class="section01 width-4">
                 <img src="images/10-War of succession.png">
                 <h4>Entertainment</h4>
@@ -204,65 +210,60 @@
             </div>
 
             <div class="section01 width-6">
-                <div class="img1 width-3">
-                    <img src="images/13-Cocaine Bear.png">
-                </div>
 
-                <div class=" text width-3">
-                    <h2>Movie Review: 'Cocaine Bear'</h2>
-                    <p>'Cocaine Bear' is a temporary high, but you should still do a bump</p>
-                    <h3>By Brian Lloyd</h3>
+                <div class="block block01 img1 width-3">
+                    <img src="images/13-Cocaine Bear.png">
+
+                    <div class="text width-3">
+                        <h2>Movie Review: 'Cocaine Bear'</h2>
+                        <p>'Cocaine Bear' is a temporary high, but you should still do a bump</p>
+                        <h3>By Brian Lloyd</h3>
+                    </div>
+                </div>
+                <div class="block img1 width-6">
+                    <img src="images/14-'You' Season 4.png">
+
+                    <div class="text width-3">
+                        <h2>'You' Season 4 isn't so bad it's good, it's just plain bad</h2>
+                        <p>Watch this as a comedy, you say? Who has the time?</p>
+                        <h3>By Brian Lloyd</h3>
+                    </div>
                 </div>
             </div>
-            <!-- <hr color="#d1d1d1"> -->
-            
 
-
-            <div class="textStories width-6">
-                <div class="section02 width-3">
+            <div class="section02 width-3">
+                <div class="textStories">
                     <h2>Liam Neeson turned down James Bond because his wife gave an ultimatum</h2>
                     <p>Neeson says he was approached for the role in the 1990s</p>
                     <h3>By Lauren Murphy</h3>
-                </div>
 
-                <div class="section03 width-3">
+                    <hr color="#d1d1d1">
+
+                    <div class=" block block02">
+                        <img src="images/17-Creed III.png">
+                        <div class="text">
+                            <h2>'Creed III' isn't a knockout, but it still packs a punch</h2>
+                            <h3>By Brian Lloyd</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section03 width-3">
+                <div class="textStories">
                     <h2>Mrs Brown's Boys to return to BBC with first mini-series in a decade</h2>
                     <p>'Fasten your seatbelts and hold on to your hats,' said Brendan O'Carroll</p>
                     <h3>By Ellie Iorizzo</h3>
-                </div>
-            </div>
 
-            <div class="section04 width-6">
-                <div class="img1 width-3">
-                    <img src="images/14-'You' Season 4.png">
-                </div>
+                    <hr color="#d1d1d1">
 
-                <div class="text width-3">
-                    <h2>'You' Season 4 isn't so bad it's good, it's just plain bad</h2>
-                    <p>Watch this as a comedy, you say? Who has the time?</p>
-                    <h3>By Brian Lloyd</h3>
-                </div>
-            </div>
-
-            <div class="section05 width-3">
-                <div class="img2">
-                    <img src="images/17-Creed III.png">
-                </div>
-
-                <div class="text">
-                    <h2>'Creed III' isn't a knockout, but it still packs a punch</h2>
-                    <h3>By Brian Lloyd</h3>
-                </div>
-            </div>
-
-            <div class="section06 width-3">
-                <div class="img2">
-                    <img src="images/18-House of the dragon.png">
-                </div>
-
-                <div class="text">
-                    <h2>'House of the Dragon' won't return until summer 2024</h2>
-                    <h3>By Lauren Murphy</h3>
+                    <div class=" block block02">
+                        <img src="images/18-House of the dragon.png">
+                        <div class="text">
+                            <h2>'House of the Dragon' won't return until summer 2024</h2>
+                            <h3>By Lauren Murphy</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -278,18 +279,79 @@
             <div class="width-12">
                 <h6>Sports</h6>
             </div>
-            <div class="textStories width-6">
-                <div class="section02 width-3">
+
+            <div class="section02 width-3">
+                <div class="textStories">
                     <h2>Barcelona crumble with no soul to anger Xavi and 'give Real Madrid life'</h2>
                     <p>Real's failure to beat 10-man Atlético gave the leaders the chance to go 10 points clear - but Almería spoiled the party</p>
                     <h3>By Sid Lowe</h3>
+
+                    <hr color="#d1d1d1">
+
+                    <div class=" block block02">
+                        <img src="images/22-Leo Cullen signs.png">
+                        <div class="text">
+                            <h2>Leo Cullen signs new two-year deal with Leinster</h2>
+                            <h3>By Cian Tracey</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section03 width-3">
+                <div class="textStories">
+                    <h2>Europe's Top 5 Leagues: Who will win the titles?</h2>
+                    <p>Five of Europe's top leagues are approaching the climax of their seasons.In some countries, the usual suspects are in pole position, but elsewhere, we could be in for some surprises. So, who will hold their nerves as the season ends?</p>
+                    <h3>By Sid Lowe</h3>
+
+                    <hr color="#d1d1d1">
+
+                    <div class=" block block02">
+                        <img src="images/23-Britain v Ireland.png">
+                        <div class="text">
+                            <h2>Britain v Ireland at Cheltenham could be a one-sided battle</h2>
+                    <h3>By Greg Wood</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section01 width-6">
+
+                <div class="block block01 img1 width-3">
+                    <img src="images/21-Johnny Sexton back in Ireland.png">
+
+                    <div class="text width-3">
+                        <h2>Johnny Sexton back in Ireland training after injury</h2>
+                        <p>The captain has been named in mini camp along with Ringrose, Henshaw, Gibson-Park and Furlong.</p>
+                        <h3>By John O'Sullivan</h3>
+                    </div>
+                </div>
+                <div class="block img1 width-6">
+                    <img src="images/24-Qatar World Cup stadiums.png">
+
+                    <div class="text width-3">
+                        <h2>What will happen to Qatar's World Cup Stadiums?</h2>
+                        <p>It's hard to believe it has been two months since the World Cup final took place in Qatar.</p>
+                        <h3>By Lee Campbell</h3>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- <div class="textStories width-6">
+                <div class="section02 width-3">
+                    
                 </div>
 
                 <div class="section03 width-3">
                     <h2>Europe's Top 5 Leagues: Who will win the titles?</h2>
-                    <p>Five of Europe's top leagues are approaching the climax of their seasons.In some countries, the
+                    <p>Five of Europe's top leagues are approaching the climax of their seasons.In some
+                        countries, the
                         usual
-                        suspects are in pole position, but elsewhere, we could be in for some surprises. So, who will
+                        suspects are in pole position, but elsewhere, we could be in for some surprises. So, who
+                        will
                         hold
                         their nerves as the season ends?</p>
                     <h3>By Sid Lowe</h3>
@@ -303,13 +365,14 @@
 
                 <div class=" text width-3">
                     <h2>Johnny Sexton back in Ireland training after injury</h2>
-                    <p>The captain has been named in mini camp along with Ringrose, Henshaw, Gibson-Park and Furlong.
+                    <p>The captain has been named in mini camp along with Ringrose, Henshaw, Gibson-Park and
+                        Furlong.
                     </p>
                     <h3>By John O'Sullivan</h3>
                 </div>
             </div>
 
-            <!-- <hr color="#d1d1d1"> -->
+            <hr color="#d1d1d1">
 
             <div class="section05 width-3">
                 <div class="img2">
@@ -340,10 +403,11 @@
 
                 <div class="text width-3">
                     <h2>What will happen to Qatar's World Cup Stadiums?</h2>
-                    <p>It's hard to believe it has been two months since the World Cup final took place in Qatar.</p>
+                    <p>It's hard to believe it has been two months since the World Cup final took place in
+                        Qatar.</p>
                     <h3>By Lee Campbell</h3>
                 </div>
-            </div>
+            </div> -->
 
 
 
@@ -361,69 +425,62 @@
             </div>
 
             <div class="section01 width-6">
-                <div class="img1 width-3">
-                    <img src="images/25-All the Republicans.png">
-                </div>
 
-                <div class=" text width-3">
-                    <h2>All the Republicans running for president in 2024</h2>
-                    <p>Right-wing activist Vivek Ramaswamy is the latest to challenge Trump for the GOP nomination.</p>
-                    <h3>By Nicole Narea</h3>
+                <div class="block block01 img1 width-3">
+                    <img src="images/25-All the Republicans.png">
+
+                    <div class="text width-3">
+                        <h2>All the Republicans running for president in 2024</h2>
+                        <p>Right-wing activist Vivek Ramaswamy is the latest to challenge Trump for the GOP nomination.</p>
+                        <h3>By Nicole Narea</h3>
+                    </div>
+                </div>
+                <div class="block img1 width-6">
+                    <img src="images/28-Biggest decision in Sunak's career.png">
+
+                    <div class="text width-3">
+                        <h2>'Biggest decision of Sunak's career'</h2>
+                        <p>PM hails 'decisive breakthrough' and 'three big steps forward' for Northern Ireland.</p>
+                        <h3>By Rob Powell</h3>
+                    </div>
                 </div>
             </div>
-            <!-- <hr color="#d1d1d1"> -->
-            <div class="textStories width-6">
-                <div class="section02 width-3">
+            
+            <div class="section02 width-3">
+                <div class="textStories">
                     <h2>Rishi Sunak agrees deal with EU over Brexit Northern Ireland protocol</h2>
-                    <p>Prime minister unveils agreement with European Commission president after four months of
-                        negotiations
-                    </p>
+                    <p>Prime minister unveils agreement with European Commission president after four months of negotiations</p>
                     <h3>By Lisa O'Carroll and Aubrey Allegretti</h3>
-                </div>
 
-                <div class="section03 width-3">
+                    <hr color="#d1d1d1">
+
+                    <div class=" block block02">
+                        <img src="images/29-What arming Ukraine looks like.png">
+                        <div class="text">
+                            <h2>Here’s what arming Ukraine could look like in the future</h2>
+                            <h3>By Ellen Ioanes</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section03 width-3">
+                <div class="textStories">
                     <h2>Britain's King Charles meeting Ursula von der Leyen ahead of expected Protocol deal</h2>
                     <p>Meeting comes ahead of expected announcement on Northern Ireland Protocol deal</p>
                     <h3>By Emma Montgomery</h3>
+
+                    <hr color="#d1d1d1">
+
+                    <div class=" block block02">
+                        <img src="images/30-Europe far from a gas price cap.png">
+                        <div class="text">
+                            <h2>Europe ‘still far’ from a deal on the gas price cap, says Polish PM</h2>
+                            <h3>By Efi Koutsokosta</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="section04 width-6">
-                <div class="img1 width-3">
-                    <img src="images/28-Biggest decision in Sunak's career.png">
-                </div>
-
-                <div class="text width-3">
-                    <h2>'Biggest decision of Sunak's career'</h2>
-                    <p>PM hails 'decisive breakthrough' and 'three big steps forward' for Northern Ireland.</p>
-                    <h3>By Rob Powell</h3>
-                </div>
-            </div>
-
-            <div class="section05 width-3">
-                <div class="img2">
-                    <img src="images/29-What arming Ukraine looks like.png">
-                </div>
-
-                <div class="text">
-                    <h2>Here’s what arming Ukraine could look like in the future</h2>
-                    <h3>By Ellen Ioanes</h3>
-                </div>
-            </div>
-
-            <div class="section06 width-3">
-                <div class="img2">
-                    <img src="images/30-Europe far from a gas price cap.png">
-                </div>
-
-                <div class="text">
-                    <h2>Europe ‘still far’ from a deal on the gas price cap, says Polish PM</h2>
-                    <h3>By Efi Koutsokosta</h3>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <footer>
         <div class="container">

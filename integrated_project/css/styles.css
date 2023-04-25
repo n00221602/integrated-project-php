@@ -1,0 +1,72 @@
+/* font-family: 'Roboto Slab', serif;
+font-family: 'Suez One', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Shrikhand', cursive;*/
+
+h1 {
+    font-family: 'Suez One', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    color: #5a5a5a;
+}
+
+h2 {
+    font-family: 'Suez One', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 33px;
+    color: #5a5a5a;
+    padding-bottom: 8px;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: #9a9a9a;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 200;
+    color: #5a5a5a;
+}
+
+h4 {
+    font-family: 'Suez One', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #5a5a5a;
+    text-decoration: underline;
+}
+
+h5 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 60px;
+    color: #202020;
+}
+
+h6 {
+    font-family: 'Suez One', serif;
+    font-size: 25px;
+    line-height: 13.5px;
+    color: #9a9a9a;
+    text-decoration: underline;
+    font-weight: 400;
+    margin: 10px 0px 10px 0px;
+}
+
+h7 {
+    font-size: 16px;
+    font-family: 'Shrikhand', cursive;
+}
+
+body a:hover {
+    color: #5a5a5a;
+    text-decoration: underline;
+}

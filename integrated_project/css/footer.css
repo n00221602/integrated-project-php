@@ -1,0 +1,31 @@
+footer {
+    background-color: #eaeaea;
+}
+
+footer h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+footer h4{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #9a9a9a;
+    line-height: 60px;
+}
+
+footer .blocks {
+    border-right: solid 3px #ffb978;
+}
+
+footer i {
+    color: #ff9900;
+    font-size: 20px;
+    padding-right: 12px;
+}
+
+footer a:hover {
+    color: #9a9a9a;
+    text-decoration: underline;
+}

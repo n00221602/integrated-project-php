@@ -1,0 +1,132 @@
+.container {
+    max-width: 960px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.column-2 {
+    flex: 50%;
+    padding: 10px;
+}
+
+.column-4 {
+    flex: 25%;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.title-section {
+    text-align: center;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+}
+
+table.wines {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.wines td, table.wines th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table.wines tr:nth-child(even){
+    background-color: #eee;
+}
+
+table.wines tr:hover {
+    background-color: #ddd;
+}
+
+table.wines th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #777;
+    color: white;
+}
+
+input[type=text], textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+div.checkbox {
+    margin: 8px 0;
+    padding: 0px 20px;
+}
+span.checkbox {
+    width: 150px;
+    padding: 6px 0px;
+    display: inline-block;
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type=submit] {
+    width: 100%;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit], button[type=submit] {
+    width: 100px;
+}
+
+.bg-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.bg-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.bg-warning {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+.bg-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.flash-message {
+    background-color: #17a2b8;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.error {
+    color: #dc3545;
+    margin-bottom: 16px;
+}

@@ -1,0 +1,16 @@
+.categoryPicks {
+    border-bottom: solid 3px #ffb978;
+}
+
+.categoryPicks h4 {
+    color: #ff9900;
+    padding: 10px 0px 10px 0px;
+}
+
+.categoryPicks h2 {
+    padding-bottom: 8px;
+}
+
+.categoryPicks p {
+    padding-bottom: 5px;
+}

@@ -27,9 +27,11 @@ try {
     }
     else {
         $filename = upload("image");
-        $data["grape_varieties"] = implode(",", $data["grape_varieties"]);
+        //$data["grape_varieties"] = implode(",", $data["grape_varieties"]);
         $data["image"] = $filename;
-
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
         $story = new Story($data);
         $story->save();
 

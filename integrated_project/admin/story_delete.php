@@ -9,7 +9,7 @@ try {
         throw new Exception("Invalid request");
     }
     else if (!isset($_GET["id"])) {
-        throw new Exception("Wine id expected");
+        throw new Exception("Story id expected");
     }
 
     $id = $_GET["id"];

@@ -43,7 +43,13 @@ catch (Exception $ex) {
                     <textarea readonly><?= $story->article ?></textarea>
 
                     <label for="category_id">Category</label>
-                    <input type="text" value="<?= Story::findById($story->category_id)->name ?>" readonly />
+                    <input type="text" value="<?= Category::findById($story->category_id)->name ?>" readonly />
+
+                    <label for="publish_date">Date</label>
+                    <input type="date" value="<?= $story->publish_date ?>" readonly />
+
+                    <label for="publish_time">Time</label>
+                    <input type="time" value="<?= $story->publish_time ?>" readonly />
 
                 </div>
                 <div class="column-2">
@@ -53,7 +59,7 @@ catch (Exception $ex) {
             <p><a class="btn bg-warning" href="story_edit.php?id=<?= $story->id ?>">Edit</a><p>
             <button type="submit" 
                 class="btn bg-danger" 
-                formaction="story_delete.php">Delete</button>
+                formaction="story_delete.php?id=<?= $story->id ?>">Delete</button>
         </form>
     </body>
 </html>

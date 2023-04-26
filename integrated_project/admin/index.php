@@ -12,6 +12,24 @@ catch (Exception $ex) {
     <head>
         <link rel="stylesheet" href="../css/main.css" />
         <title>Webpage - Admin</title>
+
+        <style>
+            .container {
+                margin-left:200px;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                padding:10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+    
+            }
+            
+        </style>
+        
     </head>
     <body class="container">
         <?php require "./include/flash.php"; ?>
@@ -39,11 +57,11 @@ catch (Exception $ex) {
                 <tr>
                     <td><?= $s->category_id ?></td>
                     <td><?= $s->author ?></td>
-                    <td><?= $s->headline ?></td>
+                    <td><a href="story_show.php?id=<?= $s->id ?>"> <h2><?= $s->heading; ?></a></td>
                     <td><?= $s->sub_heading ?></td>
-                    <td><img src= "<?= $s->image ?>"  width="200" height="150">
-                    <td><?= $s->pub_date ?></td>
-                    <td><?= $s->pub_time ?></td>
+                    <td><img src= "<?= APP_URL . '/uploads/' . $s->image ?>"  width="200" height="150">
+                    <td><?= $s->publish_date ?></td>
+                    <td><?= $s->publish_time ?></td>
                 </tr>
                 <?php } ?>
             </tbody>

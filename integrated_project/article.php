@@ -70,7 +70,7 @@ catch (Exception $ex) {
             </div>
 
             <div class="section02 width-12">
-                <h2><?= $story->headline; ?></h2> <!-- Heading -->
+                <h2><?= $story->heading; ?></h2> <!-- Heading -->
             </div>
 
             <div class="section03 width-12">
@@ -82,11 +82,11 @@ catch (Exception $ex) {
             </div>
 
             <div class="section05 width-6">
-                <h3>Date: <?= $story->pub_date ?> </h3> <!-- Date -->
+                <h3>Date: <?= $story->publish_date ?> </h3> <!-- Date -->
             </div>
 
             <div class="section06 width-6">
-                <h3>Time: <?= $story->pub_time ?> </h3> <!-- Time -->
+                <h3>Time: <?= $story->publish_time ?> </h3> <!-- Time -->
             </div>
 
             <div class="article width-12">

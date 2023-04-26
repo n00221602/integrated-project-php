@@ -4,12 +4,12 @@ class StoryValidator extends Validator {
         parent::__construct($data);
     }
 
-    public function validate() {
-        if (!$this->isPresent("headline")) {
-            $this->errors["headline"] = "Please enter a headline.";
+    public function validate($imageRequired = true) {
+        if (!$this->isPresent("heading")) {
+            $this->errors["heading"] = "Please enter a heading.";
         }
-        else if (!$this->minLength("headline", 10)) {
-            $this->errors["headline"] = "Headline must be at least 10 characters.";
+        else if (!$this->minLength("heading", 10)) {
+            $this->errors["heading"] = "Heading must be at least 10 characters.";
         }
 
 
@@ -28,28 +28,27 @@ class StoryValidator extends Validator {
             $this->errors["author"] = "Author must be at least 6 characters.";
         }
 
-
-        if (!$this->validateDate("date")) {
-            $this->errors["date"] = "Please enter a date.";
+        if (!$this->isPresent("publish_date")) {
+            $this->errors["publish_date"] = "Please enter a date.";
         }
 
-        if (!$this->validateTime("time")) {
-            $this->errors["time"] = "Please enter a time.";
+        if (!$this->isPresent("publish_time")) {
+            $this->errors["publish_time"] = "Please enter a time.";
         }
 
         if (!$this->isPresent("article")) {
             $this->errors["article"] = "Please enter an article.";
         }
-        else if (!$this->minLength("article", 500)) {
+        else if (!$this->minLength("article", 15)) {
             $this->errors["article"] = "Article must be at least 500 characters.";
         }
 
-        $validCategories = ["Entertainment", "Politics", "Sports"];
-        if (!$this->isPresent("category")) {
-            $this->errors["category"] = "Please choose a category.";
+        if (!$this->isPresent("category_id")) {
+            $this->errors["category_id"] = "Please choose a category.";
         }
-        else if (!$this->isElement("category", $validCategories)) {
-            $this->errors["category"] = "Please choose a valid category.";
+
+        if ($imageRequired && !$this->hasFile("image")) {
+            $this->errors["image"] = "Please upload an image.";
         }
 
         return count($this->errors) === 0;

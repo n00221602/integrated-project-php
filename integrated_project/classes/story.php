@@ -4,24 +4,24 @@ require_once 'db.php';
 class Story {
 
     public $id;
-    public $headline;
+    public $heading;
     public $sub_heading;
     public $category_id;
     public $image;
-    public $pub_date;
-    public $pub_time;
+    public $publish_date;
+    public $publish_time;
     public $author;
     public $article;
 
     public function __construct($props = null) {
         if ($props != null) {
             $this->id             = $props["id"];
-            $this->headline       = $props["heading"];
+            $this->heading       = $props["heading"];
             $this->sub_heading   = $props["sub_heading"];
             $this->category_id    = $props["category_id"];
             $this->image          = $props["image"];
-            $this->pub_date       = $props["publish_date"];
-            $this->pub_time       = $props["publish_time"];
+            $this->publish_date       = $props["publish_date"];
+            $this->publish_time       = $props["publish_time"];
             $this->author       = $props["author"];
             $this->article       = $props["article"];
         }
@@ -29,13 +29,104 @@ class Story {
 
   
     public function save() {
-        // not yet written
+        $stories = [];
+        try {
+            $db = new DB();
+            $conn = $db->open();
+
+            $params = [
+                ":heading" => $this->heading,
+                ":sub_heading" => $this->sub_heading,
+                ":author" => $this->author,
+                ":article" => $this->article,
+                ":image" => $this->image,
+                ":publish_date" => $this->publish_date,
+                ":publish_time" => $this->publish_time,
+                ":category_id" => $this->category_id
+                
+            ];
+
+            if($this->id === null) {
+                $sql = 
+                    "INSERT INTO stories(".
+                    "heading, sub_heading, author, article, image, publish_date, publish_time, category_id" .
+                    ") VALUES (".
+                    ":heading, :sub_heading, :author, :article, :image, :publish_date, :publish_time, :category_id" .
+                    ")";
+
+            }
+            else {
+                $sql =
+                    "UPDATE stories SET " .
+                    "heading = :heading, " .
+                    "sub_heading = :sub_heading, " .
+                    "author = :author, " .
+                    "article = :article, " .
+                    "image = :image, " .
+                    "publish_date = :publish_date, " .
+                    "publish_time = :publish_time, " .
+                    "category_id = :category_id " .
+                    "WHERE id = :id" ;
+
+                $params[":id"] = $this->id;
+            }
+            $stmt = $conn->prepare($sql);
+            $status = $stmt->execute($params);
+
+            if(!$status) {
+                $error_info = $stmt->errorInfo();
+                $message =
+                "SQLSTATE error code = " . $error_info[0] . 
+                "; error message = ".$error_info[2];
+                throw new Exception($message);
+            }
+
+            if ($stmt->rowCount() !== 1) {
+                throw new Exception("Failed to save story.");
+            }
+
+            if($this->id === null) {
+               $this->id = $conn->lastInsertId();
+            }
+        }
+        finally {
+            if ($db !== null && $db->isOpen()) {    
+                $db->close();
+            }
+        }
+        return $stories;
     }
 
     public function delete() {
-       // not yet written
-    
-    }
+        try {
+            $db = new DB();
+            $conn = $db->open();
+
+            if ($this->id !== null) {
+                $sql = "DELETE FROM stories WHERE id = :id";
+                $params[":id"] = $this->id;
+                $stmt = $conn->prepare($sql);
+                $status = $stmt->execute($params);
+
+                if(!$status) {
+                $error_info = $stmt->errorInfo();
+                $message =
+                    "SQLSTATE error code = " . $error_info[0] . 
+                    "; error message = ".$error_info[2];
+                throw new Exception($message);
+                }
+
+                if ($stmt->rowCount() !== 1) {
+                    throw new Exception("Failed to delete story.");
+                }
+            }
+        }
+        finally {
+            if ($db !== null && $db->isOpen()) {
+                $db->close();
+            }
+        }   
+    }     
 
     public static function findAll() {
         $stories = array();
@@ -181,6 +272,9 @@ class Story {
     
         return $stories;
     }
+
+    
+    
 }
 
 

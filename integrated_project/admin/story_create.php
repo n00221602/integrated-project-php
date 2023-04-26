@@ -5,7 +5,11 @@ try {
     if(session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    $stories = Story::findAll();
+    $categories = Category::findAll();
+
+    echo "<pre>";
+    print_r($_SESSION);
+    echo "</pre>";
 }
 catch (Exception $e) {
     die($e->getMessage());
@@ -50,59 +54,89 @@ catch (Exception $e) {
                 border-radius: 4px;
                 cursor: pointer;
             }
+
+            p {
+                display:flex;
+                flex-direction:column;
+            }
         </style>
     </head>
     <body>
         <h1>Create new story</h1>
 
-        <form action="story_store.php" method="POST">
+        <form action="story_store.php" method="POST" enctype="multipart/form-data">
+            <div>
             <p>
-                Headline: 
-                <input type="text" name="headline" value="<?= old("headline") ?>">
-                <span class="error"><?= error("headline") ?><span>
+                Heading: 
+                <input type="text" name="heading" value="<?= old("heading") ?>">
+                <span class="error"><?= error("heading") ?><span>
             </p>
-            
+            </div>
+
+            <div>
             <p>
                 Sub heading: 
                 <input type="text" name="sub_heading" value="<?= old("sub_heading") ?>">
                 <span class="error"><?= error("sub_heading") ?><span>
             </p>
+            </div>
 
+            <div>
             <p>
                 Author: 
                 <input type="text" name="author" value="<?= old("author") ?>">
                 <span class="error"><?= error("author") ?><span>
             </p>
+            </div>
 
+            <div>
             <p>
                 Date: 
-                <input type="date" name="date" value="<?= old("date") ?>">
-                <span class="error"><?= error("date") ?><span>
+                <input type="date" name="publish_date" value="<?= old("publish_date") ?>">
+                <span class="error"><?= error("publish_date") ?><span>
             </p>
+            </div>
 
+            <div>
             <p>
                 Time: 
-                <input type="time" name="time" value="<?= old("time") ?>">
-                <span class="error"><?= error("time") ?><span>
+                <input type="time" name="publish_time" value="<?= old("publish_time") ?>">
+                <span class="error"><?= error("publish_time") ?><span>
             </p>
+            </div>
 
+            <div>
             <p>
                 Article: 
                 <textarea name="article" value="<?= old("article") ?>"></textarea>
                 <span class="error"><?= error("article") ?><span>
             </p>
+            </div>
 
+            <div>
             <p>
                 Category:
-                <select name="category">
-                    <option value="">Please choose a category...</option>"
-                    <option value="Entertainment"  <?= chosen("category", "Entertainment")  ? "selected" : "" ?>>Entertainment</option>
-                    <option value="Politics"  <?= chosen("category", "Politics")  ? "selected" : "" ?>>Politics</option>
-                    <option value="Sports" <?= chosen("category", "Sports") ? "selected" : "" ?>>Sports</option>
-                </select>
-                <span class="error"><?= error("category") ?><span>
+                <select id="category_id" name="category_id">
+                    <?php foreach ($categories as $c) { ?>
+                        <option value="<?= $c->id ?>"
+                            <?= (chosen("category_id", $c->id) ? "selected" : "") ?>
+                        >
+                            <?= $c->name ?>
+                        </option>
+                    <?php } ?>
+            </select>
+            <div class="error"><?= error("winery_id") ?></div>
             </p>
+            </div>
+
+            <div>
             <p>
+                Image: 
+                <input type="file" name="image" value="<?= old("image") ?>">
+                <span class="error"><?= error("image") ?><span>
+            </p>
+            </div>
+
             <button type="submit">Submit</button>
         </form>
     </body>

@@ -148,15 +148,6 @@ class Validator {
             array_key_exists($key, $_FILES) && 
             $_FILES[$key]['error'] !== UPLOAD_ERR_NO_FILE;
     }
-
-    protected function validateDate($date, $format = "YYYY-MM-DD"){
-        $d = DateTime::createFromFormat($format, $date);
-    return $d && $d->format($format) === $date;
-    }
-
-    protected function validateTime() {
-        
-    }
     
 }
 ?>

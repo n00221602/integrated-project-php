@@ -79,7 +79,7 @@
                     $count = 1;
                     foreach ($leftHeadStories as $story) { ?>
                     
-                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <?php if($count ==1){?>
                         <img src= "<?= $story->image ?>"  width="280" height="160">
                     <?php }?>
@@ -99,7 +99,7 @@
                     foreach ($centreHeadStories as $story) { ?>
                     <img src= "<?= $story->image ?>"  width="585" height="390">
                     <h4> Recent news </h4>
-                    <a href="article.php?id=<?= $story->id ?>"> <h1><?= $story->headline; ?></h1> </a>
+                    <a href="article.php?id=<?= $story->id ?>"> <h1><?= $story->heading; ?></h1> </a>
                     <p><?= $story->sub_heading; ?> </p>
                 <?php } ?>
             </div>
@@ -109,7 +109,7 @@
                     $count = 1;
                     foreach ($rightHeadStories as $story) { ?>
                     
-                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <?php if($count ==1){?>
                         <img src= "<?= $story->image ?>"  width="280" height="160">
                     <?php }?>
@@ -151,7 +151,7 @@
                     
                     <div class="sections width-3">
                     <h5><?php echo $count ?></h5>
-                    <a href="article.php?id=<?= $story->id ?>"> <p><?= $story->headline; ?></p> </a>
+                    <a href="article.php?id=<?= $story->id ?>"> <p><?= $story->heading; ?></p> </a>
                     </div>
                 <?php $count++; } ?> 
         </div> 
@@ -167,9 +167,9 @@
                 <div class="width-4">
                     <img src= "<?= $story->image ?>"  width="380" height="230">
                     <h4><?= $category->name; ?></h4>
-                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                    <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <p><?= $story->sub_heading; ?> </p>
-                    <h3>Published at <?= $story->pub_time; ?></h3>
+                    <h3>Published at <?= $story->publish_time; ?></h3>
                 </div>
             <?php } ?> 
         </div>
@@ -189,7 +189,7 @@
                             <img src= "<?= $story->image ?>"  width="245" height="160">
 
                             <div class="text width-3">
-                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                                 <p><?= $story->sub_heading; ?> </p>
                                 <h3>By <?= $story->author; ?></h3>
                             </div>
@@ -205,7 +205,7 @@
                             <?php if($count>1) { ?>
                                 <hr>
                            <?php } ?>
-                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                             <p><?= $story->sub_heading; ?> </p>
                             <h3>By <?= $story->author; ?></h3>
                             
@@ -231,7 +231,7 @@
                             <?php if($count>1) { ?>
                                 <hr>
                            <?php } ?>
-                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                             <p><?= $story->sub_heading; ?> </p>
                             <h3>By <?= $story->author; ?></h3>
                             
@@ -246,7 +246,7 @@
                             <img src= "<?= $story->image ?>" width="245" height="160">
 
                             <div class="text width-3">
-                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                                 <p><?= $story->sub_heading; ?> </p>
                                 <h3>By <?= $story->author; ?></h3>
                             </div>
@@ -269,7 +269,7 @@
                             <img src= "<?= $story->image ?>"  width="245" height="160">
 
                             <div class="text width-3">
-                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                            <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                                 <p><?= $story->sub_heading; ?> </p>
                                 <h3>By <?= $story->author; ?></h3>
                             </div>
@@ -285,7 +285,7 @@
                             <?php if($count>1) { ?>
                                 <hr>
                            <?php } ?>
-                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->headline; ?></h2> </a>
+                           <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                             <p><?= $story->sub_heading; ?> </p>
                             <h3>By <?= $story->author; ?></h3>
                             

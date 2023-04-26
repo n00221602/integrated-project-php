@@ -17,5 +17,14 @@ catch (Exception $e) {
     echo $e->getMessage()   ;
 } */
 
-try
+$stories = Story::findAll();
+foreach ($stories as $s) {
+    $prefix = "images/";
+    if (str_starts_with($s->image, $prefix)) {
+        $s->image = substr($s->image, strlen($prefix));
+        $s->save();
+        echo $s->image . "<br/>";
+    }
+}
+
 ?>

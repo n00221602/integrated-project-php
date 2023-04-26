@@ -57,7 +57,11 @@ function upload($key) {
     $allowedExtensions = array("jpg", "jpeg", "png", "gif");
 
     if (!file_exists($destination)) {
+        echo "making uploads folder";
         mkdir($destination);
+    }
+    else {
+        echo "uploads folder exists";
     }
     if (!is_dir($destination)) {
         throw new Exception("Destination folder is not a directory!");

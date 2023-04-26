@@ -39,7 +39,7 @@ class StoryValidator extends Validator {
         if (!$this->isPresent("article")) {
             $this->errors["article"] = "Please enter an article.";
         }
-        else if (!$this->minLength("article", 15)) {
+        else if (!$this->minLength("article", 500)) {
             $this->errors["article"] = "Article must be at least 500 characters.";
         }
 

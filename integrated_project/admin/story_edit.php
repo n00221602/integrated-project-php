@@ -9,20 +9,20 @@ try {
         throw new Exception("Invalid request");
     }
     else if (!isset($_GET["id"])) {
-        throw new Exception("Wine id expected");
+        throw new Exception("Story id expected");
     }
 
     $id = $_GET["id"];
-    $wine = Wine::findById($id);
+    $story = Story::findById($id);
 
-    if ($wine === null) {
-        throw new Exception("Wine id not found");
+    if ($story === null) {
+        throw new Exception("Story id not found");
     }
 
-    $wineGrapeVarietyIds = explode(",", $wine->grape_varieties);
+    //$storyGrapeVarietyIds = explode(",", $story->grape_varieties);
 
-    $wineries = Winery::findAll();
-    $grapeVarieties = GrapeVariety::findAll();
+    $stories = Story::findAll();
+    $categories = Category::findAll();
 }
 catch (Exception $e) {
     die($e->getMessage());
@@ -30,88 +30,91 @@ catch (Exception $e) {
 ?>
 <html>
     <head>
-        <title>Admin - Edit new wine</title>
+        <title>Admin - Edit story</title>
         <link rel="stylesheet" href="../css/main.css" />
     </head>
     <body class="container">
             <?php require "./include/flash.php"; ?>
-        <h1>Admin - Edit wine</h1>
-        <form method="POST" action="wine_update.php" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?= $wine->id ?>" />
+        <h1>Admin - Edit story</h1>
+        <form method="POST" action="story_update.php" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?= $story->id ?>" />
             <div class="row">
                 <div class="column-2">
-                    <label for="name">Name</label>
+                    <label for="heading">Heading</label>
                     <input type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name..."
-                        value="<?= old("name", $wine->name) ?>"
+                        id="heading"
+                        name="heading"
+                        placeholder="Heading..."
+                        value="<?= old("heading", $story->heading) ?>"
                         />
-                    <div class="error"><?= error("name") ?></div>
+                    <div class="error"><?= error("heading") ?></div>
 
 
-                    <label for="year">Year</label>
+                    <label for="sub_heading">Sub heading</label>
                     <input type="text"
-                        id="year"
-                        name="year"
-                        placeholder="Year..."
-                        value="<?= old("year", $wine->year) ?>"
+                        id="sub_heading"
+                        name="sub_heading"
+                        placeholder="sub_heading..."
+                        value="<?= old("sub_heading", $story->sub_heading) ?>"
                         />
-                    <div class="error"><?= error("year") ?></div>
+                    <div class="error"><?= error("sub_heading") ?></div>
 
 
-                    <label for="price">Price</label>
+                    <label for="author">Author</label>
                     <input type="text"
-                        id="price"
-                        name="price"
-                        placeholder="Price..."
-                        value="<?= old("price", $wine->price) ?>"
+                        id="author"
+                        name="author"
+                        placeholder="author..."
+                        value="<?= old("author", $story->author) ?>"
                         />
-                    <div class="error"><?= error("price") ?></div>
+                    <div class="error"><?= error("author") ?></div>
 
 
-                    <label for="description">Description</label>
-                    <textarea id="description"
-                            name="description"
-                            placeholder="Description..."><?= old("description", $wine->description) ?></textarea>
-                    <div class="error"><?= error("description") ?></div>
+                    <label for="article">Article</label>
+                    <textarea id="article"
+                            name="article"
+                            placeholder="article..."><?= old("article", $story->article) ?></textarea>
+                    <div class="error"><?= error("article") ?></div>
 
 
-                    <label for="winery_id">Winery</label>
-                    <select id="winery_id" name="winery_id">
-                        <?php foreach ($wineries as $w) { ?>
-                            <option value="<?= $w->id ?>"
-                                    <?= (chosen("winery_id", $w->id, $wine->winery_id) ? "selected" : "") ?>
+                    <label for="category_id">Category</label>
+                    <select id="category_id" name="category_id">
+                        <?php foreach ($categories as $c) { ?>
+                            <option value="<?= $c->id ?>"
+                                    <?= (chosen("category_id", $c->id, $story->category_id) ? "selected" : "") ?>
                                     >
-                            <?= $w->name ?>
+                            <?= $c->name ?>
                             </option>
                         <?php } ?>
                     </select>
-                    <div class="error"><?= error("winery_id") ?></div>
+                    <div class="error"><?= error("category_id") ?></div>
 
 
-                    <label for="grapeVarieties">Grape varieties</label><br/>
-                    <div class="checkbox">
-                    <?php foreach ($grapeVarieties as $gv) { ?>
-                        <span class="checkbox">
-                            <input type="checkbox"
-                                name="grape_varieties[]"
-                                id="grape_variety-<?= $gv->id ?>"
-                                value="<?= $gv->id ?>"
-                                <?= (chosen("grape_varieties", $gv->id, $wineGrapeVarietyIds) ? "checked" : "") ?>
-                                />
-                            <label for ="grape_variety-<?= $gv->id ?>"><?= $gv->variety ?></label>
-                        </span>
-                    <?php } ?>
-                    </div>
-                    <div class="error"><?= error("grape_varieties") ?></div>
+                    <label for="publish_date">Date</label>
+                    <input type="date"
+                        id="publish_date"
+                        name="publish_date"
+                        placeholder="publish_date..."
+                        value="<?= old("publish_date", $story->publish_date) ?>"
+                        />
+                    <div class="error"><?= error("publish_date") ?></div>
+
+
+                    <label for="publish_time">Time</label>
+                    <input type="time"
+                        id="publish_time"
+                        name="publish_time"
+                        placeholder="publish_time..."
+                        value="<?= old("publish_time", $story->publish_time) ?>"
+                        />
+                    <div class="error"><?= error("publish_time") ?></div>
 
                     <label for="image">Image</label>
                     <input type="file" id="image" name="image" class="btn" />
                     <div class="error"><?= error("image") ?></div>
                 </div>
                 <div class="column-2">
-                    <img src="<?= APP_URL . "/uploads/". $wine->image ?>" width="460px" />
+                    <img src="<?= APP_URL . "/uploads/". $story->image ?>" width="460px" />
                 </div>
             </div>
             <input type="submit" class="btn bg-success" value="Update">

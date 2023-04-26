@@ -27,6 +27,8 @@ catch (Exception $ex) {
         <?php require "./include/flash.php"; ?>
         <h1>Admin - Story details</h1>
         <form method="POST">
+            <button type="submit" 
+                formaction="index.php">Back to admin</button>
             <input type="hidden" name="id" value="<?= $story->id ?>" />
             <div class="row">
                 <div class="column-2">
@@ -60,6 +62,7 @@ catch (Exception $ex) {
             <button type="submit" 
                 class="btn bg-danger" 
                 formaction="story_delete.php?id=<?= $story->id ?>">Delete</button>
+                
         </form>
     </body>
 </html>

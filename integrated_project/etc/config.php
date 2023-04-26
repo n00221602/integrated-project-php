@@ -2,7 +2,7 @@
 namespace webpage;
 
 define("APP_ROOT", dirname(__DIR__));
-define("APP_URL", "http://localhost/integrated-project-php-1/integrated_project");
+define("APP_URL", "http://localhost/integrated-project-php/integrated_project");
 
 spl_autoload_register(function ($class) {
     $class_path = str_replace('\\', '/', $class);

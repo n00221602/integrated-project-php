@@ -15,7 +15,7 @@ catch (Exception $ex) {
 
         <style>
             .container {
-                margin-left:200px;
+                align-items:center;
             }
 
             table, th, td {
@@ -23,7 +23,7 @@ catch (Exception $ex) {
                 padding:10px;
             }
             table {
-                width: 100%;
+                width:100%;
                 border-collapse: collapse;
     
             }

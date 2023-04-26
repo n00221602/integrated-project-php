@@ -66,7 +66,7 @@ catch (Exception $ex) {
     <div class="articlePage">
         <div class="container">
             <div class="section01 width-12">
-                <img src= "<?= $story->image ?>"  width="810" height="460"> <!-- Image -->
+                <img src= "images/<?= $story->image ?>"  width="810" height="460"> <!-- Image -->
             </div>
 
             <div class="section02 width-12">

@@ -81,7 +81,7 @@
                     
                     <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <?php if($count ==1){?>
-                        <img src= "<?= $story->image ?>"  width="280" height="160">
+                        <img src= "images/<?= $story->image ?>"  width="280" height="160">
                     <?php }?>
                     <p><?= $story->sub_heading; ?></p>
                     <h3>By <?= $story->author; ?></h3>
@@ -97,7 +97,7 @@
             <div class="section03 width-6">
                 <?php
                     foreach ($centreHeadStories as $story) { ?>
-                    <img src= "<?= $story->image ?>"  width="585" height="390">
+                    <img src= "images/<?= $story->image ?>"  width="585" height="390">
                     <h4> Recent news </h4>
                     <a href="article.php?id=<?= $story->id ?>"> <h1><?= $story->heading; ?></h1> </a>
                     <p><?= $story->sub_heading; ?> </p>
@@ -111,7 +111,7 @@
                     
                     <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <?php if($count ==1){?>
-                        <img src= "<?= $story->image ?>"  width="280" height="160">
+                        <img src= "images/<?= $story->image ?>"  width="280" height="160">
                     <?php }?>
                     <p><?= $story->sub_heading; ?></p>
                     <h3>By <?= $story->author; ?></h3>
@@ -165,7 +165,7 @@
             foreach ($categoryStories as $story) { ?>
             <?php $category = Category::findById($story->category_id); ?>
                 <div class="width-4">
-                    <img src= "<?= $story->image ?>"  width="380" height="230">
+                    <img src= "images/<?= $story->image ?>"  width="380" height="230">
                     <h4><?= $category->name; ?></h4>
                     <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
                     <p><?= $story->sub_heading; ?> </p>
@@ -186,7 +186,7 @@
                 <?php
                     foreach ($leftentertainmentStories as $story) { ?>
                         <div class="block block01 img1 width-3">
-                            <img src= "<?= $story->image ?>"  width="245" height="160">
+                            <img src= "images/<?= $story->image ?>"  width="245" height="160">
 
                             <div class="text width-3">
                             <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
@@ -243,7 +243,7 @@
                 <?php
                     foreach ($rightSportsStories as $story) { ?>
                         <div class="block block01 img1 width-3">
-                            <img src= "<?= $story->image ?>" width="245" height="160">
+                            <img src= "images/<?= $story->image ?>" width="245" height="160">
 
                             <div class="text width-3">
                             <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
@@ -266,7 +266,7 @@
                 <?php
                     foreach ($leftPoliticsStories as $story) { ?>
                         <div class="block block01 img1 width-3">
-                            <img src= "<?= $story->image ?>"  width="245" height="160">
+                            <img src= "images/<?= $story->image ?>"  width="245" height="160">
 
                             <div class="text width-3">
                             <a href="article.php?id=<?= $story->id ?>"> <h2><?= $story->heading; ?></h2> </a>
@@ -323,11 +323,11 @@
             </div>
 
             <div class="blocks block04 width-3">
-                <h2>About us</h2>
-                <a href="#"><h4>Recruitment</h4></a>
-                <a href="#"><h4>Subscription info</h4></a>
-                <a href="#"><h4>Advertisements</h4></a>
-                <a href="#"><h4>Our team</h4></a>
+                <h2>Other</h2>
+                <a href="admin/index.php"><h4>My Admin</h4></a>
+                <a href="#"><h4>Terms and conditions</h4></a>
+                <a href="#"><h4>Privacy policy</h4></a>
+                <a href="#"><h4>Account settings</h4></a>
             </div>
 
         </div>

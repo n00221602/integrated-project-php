@@ -106,34 +106,34 @@ catch (Exception $ex) {
         <div class="container">
             <div class="blocks block01 width-3">
                 <h2>About us</h2>
-                <h4>Recruitment</h4>
-                <h4>Subscription info</h4>
-                <h4>Advertisements</h4>
-                <h4>Our team</h4>
+                <a href="#"><h4>Recruitment</h4></a>
+                <a href="#"><h4>Subscription info</h4></a>
+                <a href="#"><h4>Advertisements</h4></a>
+                <a href="#"><h4>Our team</h4></a>
             </div>
 
             <div class="blocks block02 width-3">
                 <h2>Support</h2>
-                <h4>Help centre</h4>
-                <h4>Donations</h4>
-                <h4>Contact us</h4>
-                <h4>Contact preferences</h4>
+                <a href="#"><h4>Help centre</h4></a>
+                <a href="#"><h4>Donations</h4></a>
+                <a href="#"><h4>Contact us</h4></a>
+                <a href="#"><h4>Contact preferences</h4></a>
             </div>
 
             <div class="blocks block03 width-3">
                 <h2>Follow our socials</h2>
-                <h4><i class="fa-brands fa-youtube"></i>Youtube</h4>
-                <h4><i class="fa-brands fa-facebook"></i>Facebook</h4>
-                <h4><i class="fa-brands fa-twitter"></i>Twitter</h4>
-                <h4><i class="fa-brands fa-linkedin"></i>Linkedin</h4>
+                <a href="#"><h4><i class="fa-brands fa-youtube"></i>Youtube</h4></a>
+                <a href="#"><h4><i class="fa-brands fa-facebook"></i>Facebook</h4></a>
+                <a href="#"><h4><i class="fa-brands fa-twitter"></i>Twitter</h4></a>
+                <a href="#"><h4><i class="fa-brands fa-linkedin"></i>Linkedin</h4></a>
             </div>
 
             <div class="blocks block04 width-3">
-                <h2>About us</h2>
-                <h4>Recruitment</h4>
-                <h4>Subscription info</h4>
-                <h4>Advertisements</h4>
-                <h4>Our team</h4>
+                <h2>Other</h2>
+                <a href="admin/index.php"><h4>My Admin</h4></a>
+                <a href="#"><h4>Terms and conditions</h4></a>
+                <a href="#"><h4>Privacy policy</h4></a>
+                <a href="#"><h4>Account settings</h4></a>
             </div>
 
         </div>
